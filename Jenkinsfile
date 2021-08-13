@@ -52,7 +52,7 @@ pipeline {
                 failure {
                     emailext body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> Build URL: ${env.BUILD_URL} <br> Stage Name: ${env.STAGE_NAME}",
                             mimeType: 'text/html',
-                            subject: "ERROR CI In ${env.STAGE_NAME}: Project name -> ${env.JOB_NAME}",
+                            subject: "ERROR CI In ${env.STAGE_NAME}: Project name test -> ${env.JOB_NAME}",
                             to: 'jenkinsproject51@gmail.com'
                 }
             }
