@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', 'Dockerhub') {
-                        frontendImage = docker.build("omarlaz/frontend:dev", "-f Dockerfile.dev")
+                        frontendImage = docker.build("omarlaz/frontend:dev", "-f Dockerfile.dev .")
                     }
                 } 
             }
