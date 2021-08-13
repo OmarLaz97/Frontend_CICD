@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+    database:
+        image: 'postgres:11-alpine'
+        restart: always
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+        environment: 
+            POSTGRES_USER: 'postgres'
+            POSTGRES_PASSWORD: 'postgres'
+            PGDATA: /data/postgres
+    api:
+        image: omarlaz/backend
+    client:
+        build:
+            context: ./Frontend
+            dockerfile: Dockerfile.dev
+    proxy:
+        build:
+            context: ./proxy
+            dockerfile: Dockerfile
+        ports:
+            - "8000:80"
+        restart: always
+
