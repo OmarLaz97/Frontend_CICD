@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('', 'Dockerhub') {
-                        frontendImage = docker.build("omarlaz/frontend:dev")
+                        frontendImage = docker.build("omarlaz/frontend")
                     }
                 } 
             }
@@ -57,5 +57,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Rollout FrontEnd Deployment') {
+            steps {
+                withKubeConfig([credentialsId: 'apiserver', serverUrl: 'https://34.207.141.172:8443/']) {
+                    sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+                    sh 'chmod u+x ./kubectl'
+                    sh './kubectl rollout restart deployment/client-deployment'
+                }
+            }
+        } 
+
     }    
 }
