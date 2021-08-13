@@ -1,0 +1,7 @@
+.delKey {
+    color: red;
+}
+
+.delKey:hover {
+    color: darkred;
+}
