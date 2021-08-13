@@ -13,7 +13,7 @@ services:
         image: omarlaz/backend
     client:
         build:
-            context: ./Frontend
+            context: .
             dockerfile: Dockerfile.dev
     proxy:
         build:
