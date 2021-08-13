@@ -28,7 +28,9 @@ pipeline {
         }
 
         stage('Unit Testing Frontend Development Image') {
-            sh "docker run -e CI=true omarlaz/frontend:dev npm test"
+            steps {
+                sh "docker run -e CI=true omarlaz/frontend:dev npm test"
+            }
 
             post {
                 success {
@@ -44,7 +46,7 @@ pipeline {
             }
         }
 
-        
+
 
 
                 
