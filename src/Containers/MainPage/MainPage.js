@@ -38,7 +38,7 @@ class mainPage extends React.Component {
             className="menu"
           >
             <Menu.Item key="ALL USERS" icon={<UnorderedListOutlined />}>
-              ALL USERSs
+              ALL USERS
             </Menu.Item>
             <Menu.Item key="NEW USER" icon={<UserAddOutlined />}>
               NEW USER
