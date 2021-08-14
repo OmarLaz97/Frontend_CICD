@@ -41,7 +41,7 @@ class mainPage extends React.Component {
               ALL USERS
             </Menu.Item>
             <Menu.Item key="NEW USER" icon={<UserAddOutlined />}>
-              NEW USER
+              NEW USERS
             </Menu.Item>
           </Menu>
           <div className="content">
