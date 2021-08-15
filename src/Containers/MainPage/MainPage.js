@@ -34,7 +34,7 @@ class mainPage extends React.Component {
             onClick={this.handleClick}
             selectedKeys={[current]}
             mode="horizontal"
-            theme="ligth"
+            theme="dark"
             className="menu"
           >
             <Menu.Item key="ALL USERS" icon={<UnorderedListOutlined />}>
