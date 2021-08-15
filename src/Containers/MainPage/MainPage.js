@@ -29,7 +29,7 @@ class mainPage extends React.Component {
     const { current } = this.state;
     return (
       <React.Fragment>
-        <div className="mainPage"
+        <div className="mainPage">
           <Menu
             onClick={this.handleClick}
             selectedKeys={[current]}
