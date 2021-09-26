@@ -36,7 +36,7 @@ class mainPage extends React.Component {
             mode="horizontal"
             theme="dark"
             className="menu"
-          >
+          
             <Menu.Item key="ALL USERS" icon={<UnorderedListOutlined />}>
               ALL USERS
             </Menu.Item>
