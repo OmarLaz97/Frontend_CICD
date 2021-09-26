@@ -60,7 +60,7 @@ pipeline {
 
         stage('Rollout FrontEnd Deployment') {
             steps {
-                withKubeConfig([credentialsId: 'apiserver', serverUrl: 'https://54.89.113.239:8443/']) {
+                withKubeConfig([credentialsId: 'apiserver', serverUrl: 'https://54.90.228.154:8443/']) {
                     sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
                     sh 'chmod u+x ./kubectl'
                     sh './kubectl rollout restart deployment/client-deployment'
